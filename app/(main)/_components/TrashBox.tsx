@@ -9,6 +9,7 @@ import { toast } from "sonner"
 import Spinner from "@/components/ui/Spinner"
 import { Search, Trash, Undo } from "lucide-react"
 import { Input } from "@/components/ui/input"
+import ConfirmModal from "@/components/modals/ConfirmModal"
 
 const TrashBox = () => {
   const router = useRouter()
@@ -91,13 +92,14 @@ const TrashBox = () => {
               >
                 <Undo className="w-4 h-4 text-muted-foreground" />
               </div>
-              <div
-                className="rounded-sm p-2 hover:bg-neutral-200"
-                role="button"
-                onClick={(e) => onRemove(document._id)}
-              >
-                <Trash className="w-4 h-4 text-muted-foreground" />
-              </div>
+              <ConfirmModal onConfirm={() => onRemove(document._id)}>
+                <div
+                  className="rounded-sm p-2 hover:bg-neutral-200"
+                  role="button"
+                >
+                  <Trash className="w-4 h-4 text-muted-foreground" />
+                </div>
+              </ConfirmModal>
             </div>
           </div>
         ))}
