@@ -6,10 +6,11 @@ import { useQuery, useMutation } from "convex/react"
 import { useParams, useRouter } from "next/navigation"
 import { useState } from "react"
 import { toast } from "sonner"
-import Spinner from "@/components/ui/Spinner"
+
 import { Search, Trash, Undo } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import ConfirmModal from "@/components/modals/ConfirmModal"
+import Spinner from "@/components/Spinner"
 
 const TrashBox = () => {
   const router = useRouter()
