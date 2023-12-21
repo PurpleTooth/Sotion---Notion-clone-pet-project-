@@ -31,7 +31,7 @@ type Props = {
   level?: number
   onExpand?: () => void
   icon: LucideIcon
-  onClick: () => void
+  onClick?: () => void
   label: string
 }
 const Item = ({
